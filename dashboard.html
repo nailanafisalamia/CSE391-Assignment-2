@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>Dashboard</header>
+
+<nav>
+  <button class="active" onclick="showPage('fortune', this)">Fortune Generator</button>
+  <button onclick="showPage('stopwatch', this)">Stopwatch</button>
+  <button onclick="showPage('todo', this)">To-Do List</button>
+</nav>
+
+<!-- Fortune Generator -->
+<div id="page-fortune" class="page active">
+  <div class="card">
+    <div id="fortune-box">Loading your fortune...</div>
+    <div class="style-buttons">
+      <button id="btn-font-color" onclick="cycleFontColor()">Font Color</button>
+      <button id="btn-bg-color"   onclick="cycleBgColor()">Background</button>
+      <button id="btn-border"     onclick="cycleBorderColor()">Border Color</button>
+      <button id="btn-font-style" onclick="cycleFontStyle()">Font Style</button>
+    </div>
+    <button id="btn-new-fortune" onclick="showFortune()">New Fortune</button>
+  </div>
+</div>
+
+<!-- Stopwatch -->
+<div id="page-stopwatch" class="page">
+  <div class="card">
+    <div id="timer-display">0 s</div>
+    <div class="timer-note">Counts in multiples of 3, stops at 30 s</div>
+    <div class="timer-buttons">
+      <button id="btn-start" onclick="startTimer()">Start</button>
+      <button id="btn-stop"  onclick="stopTimer()">Stop</button>
+      <button id="btn-reset" onclick="resetTimer()">Reset</button>
+    </div>
+    <div id="timer-status"></div>
+  </div>
+</div>
+
+<!-- To-Do List -->
+<div id="page-todo" class="page">
+  <div class="card">
+    <div class="todo-input-row">
+      <input type="text" id="todo-input" placeholder="Enter a task..." />
+      <button id="btn-add-todo" onclick="addTask()">Add</button>
+    </div>
+    <ul id="todo-list"></ul>
+    <div id="todo-empty">No tasks yet.</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
